@@ -16,3 +16,8 @@ variable "alternative_domains" {
   description = "Domians name to request ACM certificates"
   default = []
 }
+
+variable "validate" {
+  description = "Validate ACM certificates"
+  enabled = true
+}

@@ -17,7 +17,7 @@ resource "aws_route53_record" "this" {
 
 resource "aws_acm_certificate_validation" "this" {
   provider = "aws"
-  count = "${length(var.zone_ids)}"
+  count = "${var.validate ? length(var.zone_ids) : 0}"
   certificate_arn = "${aws_acm_certificate.this.arn}"
-  validation_record_fqdns = ["${element(aws_route53_record.this.*.fqdn, count.index)}"]
+  validation_record_fqdns = ["${aws_route53_record.this.*.fqdn}"]
 }
