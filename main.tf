@@ -8,6 +8,7 @@ resource "aws_acm_certificate" "this" {
 
 resource "aws_route53_record" "this" {
   count = "${length(var.zone_ids)}"
+  allow_overwrite = "${var.overwrite}"
   name = "${lookup(aws_acm_certificate.this.domain_validation_options[count.index], "resource_record_name")}"
   type = "${lookup(aws_acm_certificate.this.domain_validation_options[count.index], "resource_record_type")}"
   zone_id = "${element(var.zone_ids, count.index)}"

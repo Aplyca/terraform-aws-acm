@@ -21,3 +21,8 @@ variable "validate" {
   description = "Validate ACM certificates"
   default = true
 }
+
+variable "overwrite" {
+  description = "Allow creation of this record in Terraform to overwrite an existing record"
+  default = true
+}
