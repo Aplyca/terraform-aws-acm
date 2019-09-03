@@ -1,6 +1,6 @@
 variable "tags" {
   description = "Tags"
-  default = {}
+  default     = {}
 }
 
 variable "domain" {
@@ -9,20 +9,21 @@ variable "domain" {
 
 variable "zone_ids" {
   description = "Zone Id"
-  default = []
+  default     = []
 }
 
 variable "alternative_domains" {
-  description = "Domians name to request ACM certificates"
-  default = []
+  description = "Domains name to request ACM certificates"
+  default     = []
 }
 
 variable "validate" {
   description = "Validate ACM certificates"
-  default = true
+  default     = true
 }
 
 variable "overwrite" {
   description = "Allow creation of this record in Terraform to overwrite an existing record"
-  default = true
+  default     = true
 }
+
